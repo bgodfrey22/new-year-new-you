@@ -10,5 +10,9 @@
   <%= @exercise.muscle_group %>
 </p>
 
+<div>
+  <%= image_tag @exercise.image, height: '300', width: 'auto' %>
+</div>
+
 <%= link_to 'Edit', edit_exercise_path(@exercise) %> |
 <%= link_to 'Back', exercises_path %>

@@ -1,6 +1,6 @@
 class ExercisesController < ApplicationController
   before_action :set_exercise, only: [:show, :edit, :update, :destroy]
-
+  
   # GET /exercises
   # GET /exercises.json
   def index
@@ -69,6 +69,6 @@ class ExercisesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def exercise_params
-      params.require(:exercise).permit(:name, :muscle_group)
+      params.require(:exercise).permit(:name, :muscle_group, :image)
     end
 end
