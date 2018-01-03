@@ -17,13 +17,13 @@
   </div>
 
   <div class="form-group">
-    <%= form.label :muscle_group %>
-    <%= form.text_field :muscle_group, id: :exercise_muscle_group, class: 'form-control' %>
+    <%= form.label :image %>
+    <%= form.file_field :image %>
   </div>
 
   <div class="form-group">
-    <%= form.label :image %>
-    <%= form.file_field :image %>
+    <%= form.label :muscle_group %> </br>
+    <%= form.select :muscle_group, options_for_select(Exercise::MUSCLE_GROUP), class: 'form-control' %>
   </div>
 
   <div class="actions">
