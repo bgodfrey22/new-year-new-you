@@ -2,13 +2,11 @@ class ExercisesController < ApplicationController
   before_action :set_exercise, only: [:show, :edit, :update, :destroy]
   
   # GET /exercises
-  # GET /exercises.json
   def index
     @exercises = Exercise.all
   end
 
   # GET /exercises/1
-  # GET /exercises/1.json
   def show
   end
 
@@ -22,7 +20,6 @@ class ExercisesController < ApplicationController
   end
 
   # POST /exercises
-  # POST /exercises.json
   def create
     @exercise = Exercise.new(exercise_params)
 
@@ -38,7 +35,6 @@ class ExercisesController < ApplicationController
   end
 
   # PATCH/PUT /exercises/1
-  # PATCH/PUT /exercises/1.json
   def update
     respond_to do |format|
       if @exercise.update(exercise_params)
@@ -52,7 +48,6 @@ class ExercisesController < ApplicationController
   end
 
   # DELETE /exercises/1
-  # DELETE /exercises/1.json
   def destroy
     @exercise.destroy
     respond_to do |format|
