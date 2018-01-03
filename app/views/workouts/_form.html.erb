@@ -1,0 +1,53 @@
+<%= form_with(model: workout, local: true) do |form| %>
+  <% if workout.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(workout.errors.count, "error") %> prohibited this exercise from being saved:</h2>
+
+      <ul>
+      <% workout.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :label %>
+    <%= form.text_field :label, id: :workout_label, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :legs %>
+    <p> Choose Leg Exercise Here</p>
+  </div>
+  
+  <div class="form-group">
+    <%= form.label :chest %>
+    <p> Choose Chest Exercise Here</p>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :back %>
+    <p> Choose Back Exercise Here</p>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :shoulders %>
+    <p> Choose Shoulders Exercise Here</p>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :arms %>
+    <p> Choose Arms Exercise Here</p>
+  </div>
+  
+  <div class="form-group">
+    <%= form.label :abs %>
+    <p> Choose Abs/Core Exercise Here</p>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
