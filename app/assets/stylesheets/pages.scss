@@ -1,0 +1,97 @@
+body {
+    background-color: #18191B;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.nav-style {
+    background-color: transparent;
+    margin: 0;
+    border-radius: 0;
+    position: static;
+    z-index: 150;
+    width: 100%;
+}
+.icon-bar {
+    background-color: #A9DCFC;
+}
+.nav-style .navbar-brand {
+    font-family: 'Knewave', cursive;
+    font-size: 3em;
+    color: #A9DCFC;
+}
+.nav-style a {
+    color: #A9DCFC;
+    text-transform: uppercase;
+}
+.nav li a:hover, 
+.nav li a:focus {
+    background-color: #FFF;
+}
+.dropdown li a {
+    color: #FFF;
+}
+.carousel-style .carousel-inner .item {
+    max-height: 250px; 
+    background-position: center center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+.carousel-style img {
+    width: 100%;
+}
+.carousel-style h1 {
+    font-size: 2em;
+}
+.call-to-action {
+    background-color: #A9DCFC;
+    text-align: center;
+    padding: 5% 0;
+    font-family: 'Knewave', cursive;
+    font-size: 2em;
+    color: #18191B;
+}
+.call-to-action span {
+    font-size: 2em;
+    color: #FFF;
+    text-transform: uppercase;
+    text-shadow: 2px 2px #18191B;
+}
+.how-it-works {
+    padding: 2% auto;
+    color: #fff;
+    text-align: center;
+}
+.how-it-works h1 {
+    font-size: 2em;
+}
+.how-it-works .panel{
+    background-color: transparent;
+    text-align: center;
+}
+.how-it-works .panel span {
+    font-size: 2em;
+}
+@media (min-width: 414px) {
+    .carousel-style .carousel-inner .item {
+        max-height: 325px; 
+    }
+    .carousel-style h1 {
+        font-size: 2.5em;
+    }
+    .carousel-style p {
+        font-size: 1.2em;
+    }
+    .dropdown-menu {
+        background-color: #18191B;
+    }
+}
+@media (min-width: 768px) {
+    .carousel-style .carousel-inner .item {
+        max-height: 500px; 
+    }
+    .carousel-style h1 {
+        font-size: 3.5em;
+    }
+    .carousel-style p {
+        font-size: 1.8em;
+    }
+}
