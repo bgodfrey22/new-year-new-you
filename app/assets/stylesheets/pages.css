@@ -14,24 +14,40 @@ body {
 .carousel-style img {
     width: 100%;
 }
-
+.how-it-works {
+    margin: 2% auto;
+    color: #fff;
+    text-align: center;
+}
+.how-it-works .panel{
+    background-color: transparent;
+    text-align: center;
+}
+.how-it-works .panel span {
+    font-size: 2em;
+}
 @media (min-width: 414px) {
     .carousel-style .carousel-inner .item {
+        max-height: 450px; 
+    }
+    .carousel-style h1 {
+        font-size: 3em;
+    }
+    .carousel-style p {
+        font-size: 1.2em;
+    }
+}
+@media (min-width: 1024px) {
+    .carousel-style .carousel-inner .item {
         max-height: 550px; 
-        background-position: center center; 
-        background-repeat: no-repeat; 
-        background-size: cover;
     }
     .carousel-style img:hover {
         opacity: 0.3;
     }
-    .carousel-style img {
-        width: 100%;
-    }
-    h1 {
+    .carousel-style h1 {
         font-size: 4em;
     }
-    p {
+    .carousel-style p {
         font-size: 1.8em;
     }
 }
