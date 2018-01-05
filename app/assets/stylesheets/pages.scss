@@ -1,34 +1,3 @@
-body {
-    background-color: #18191B;
-    font-family: 'Source Sans Pro', sans-serif;
-}
-.nav-style {
-    background-color: transparent;
-    margin: 0;
-    border-radius: 0;
-    position: static;
-    z-index: 150;
-    width: 100%;
-}
-.icon-bar {
-    background-color: #A9DCFC;
-}
-.nav-style .navbar-brand {
-    font-family: 'Knewave', cursive;
-    font-size: 3em;
-    color: #A9DCFC;
-}
-.nav-style a {
-    color: #A9DCFC;
-    text-transform: uppercase;
-}
-.nav li a:hover, 
-.nav li a:focus {
-    background-color: #FFF;
-}
-.dropdown li a {
-    color: #FFF;
-}
 .carousel-style .carousel-inner .item {
     max-height: 250px; 
     background-position: center center; 
@@ -45,32 +14,57 @@ body {
     background-color: #A9DCFC;
     text-align: center;
     padding: 5% 0;
-    font-family: 'Knewave', cursive;
-    font-size: 2em;
     color: #18191B;
 }
+.call-to-action h1 {
+    font-family: 'Knewave', sans-serif;
+    font-size: 1.8em;
+}
 .call-to-action span {
-    font-size: 2em;
+    font-size: 2.4em;
     color: #FFF;
     text-transform: uppercase;
     text-shadow: 2px 2px #18191B;
 }
+.call-to-action img {
+    width: 70px;
+    padding:1% 0;
+}
 .how-it-works {
-    padding: 2% auto;
-    color: #fff;
+    background-color: #5280AA;
+    width: 100%;
+    color: #A9DCFC;
     text-align: center;
 }
 .how-it-works h1 {
     font-size: 2em;
 }
-.how-it-works .panel{
+.how-it-works .panel {
     background-color: transparent;
     text-align: center;
+    margin: 0;
+}
+.how-it-works h3 {
+    color: #FFF;
 }
 .how-it-works .panel span {
     font-size: 2em;
 }
+.contact {
+    background-color: #FFF;
+    width: 100%;
+    padding: 2% 0;
+    text-align: center;
+}
+.contact h1 span {
+    font-family: 'Knewave', sans-serif;
+    text-transform: uppercase;
+    text-shadow: 2px 2px #A9DCFC;
+}
 @media (min-width: 414px) {
+    .dropdown-menu {
+        background-color: #18191B;
+    }
     .carousel-style .carousel-inner .item {
         max-height: 325px; 
     }
@@ -80,8 +74,11 @@ body {
     .carousel-style p {
         font-size: 1.2em;
     }
-    .dropdown-menu {
-        background-color: #18191B;
+    .call-to-action h1 {
+        font-size: 2em; 
+    }
+    .call-to-action img {
+        width: 90px;
     }
 }
 @media (min-width: 768px) {
@@ -93,5 +90,12 @@ body {
     }
     .carousel-style p {
         font-size: 1.8em;
+    }
+    .call-to-action h1 {
+        font-size: 2.5em; 
+    }
+    .call-to-action img {
+        width: 150px;
+        padding:20% 0;
     }
 }

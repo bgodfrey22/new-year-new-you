@@ -13,4 +13,47 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
- 
+
+ body {
+    background-color: #18191B;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.nav-style {
+    background-color: transparent;
+    margin: 0;
+    border-radius: 0;
+    position: static;
+    z-index: 150;
+    width: 100%;
+}
+.icon-bar {
+    background-color: #A9DCFC;
+}
+.nav-style .navbar-brand {
+    font-family: 'Knewave', cursive;
+    font-size: 3em;
+    color: #A9DCFC;
+}
+.nav-style a {
+    color: #A9DCFC;
+    text-transform: uppercase;
+}
+.nav li a:hover, 
+.nav li a:focus {
+    background-color: #FFF;
+}
+.dropdown li a {
+    color: #FFF;
+}
+footer {
+    padding: 1%;
+    text-align: center;
+    color: #A9DCFC;
+}
+.connect-icons {
+    padding: 2% 0;
+}
+.connect-icons a {
+    padding: 0 4%;
+    color: #A9DCFC;
+}
