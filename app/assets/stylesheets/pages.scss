@@ -1,3 +1,4 @@
+/***** HOME PAGE ******/
 .carousel-style .carousel-inner .item {
     max-height: 250px; 
     background-position: center center; 
@@ -11,10 +12,9 @@
     font-size: 2em;
 }
 .call-to-action {
-    background-color: #A9DCFC;
     text-align: center;
     padding: 5% 0;
-    color: #18191B;
+    color: #040D17;
 }
 .call-to-action h1 {
     font-family: 'Knewave', sans-serif;
@@ -22,30 +22,34 @@
 }
 .call-to-action span {
     font-size: 2.4em;
-    color: #FFF;
+    color: #00B478;
+    text-shadow: 2px 2px #040D17;
     text-transform: uppercase;
-    text-shadow: 2px 2px #18191B;
 }
 .call-to-action img {
     width: 70px;
     padding:1% 0;
 }
-.how-it-works {
-    background-color: #5280AA;
+.how-it-works,
+.about-meet {
     width: 100%;
-    color: #A9DCFC;
+    color: #D10342;
     text-align: center;
-}
-.how-it-works h1 {
-    font-size: 2em;
 }
 .how-it-works .panel {
     background-color: transparent;
     text-align: center;
-    margin: 0;
+    margin: 2% 0;
+    border: none;
 }
-.how-it-works h3 {
-    color: #FFF;
+.how-it-works h1,
+.about-meet h1 {
+    color: #00B478;
+}
+.how-it-works h3,
+.how-it-works span,
+.about-meet h3 {
+    color: #040D17;
 }
 .how-it-works .panel span {
     font-size: 2em;
@@ -56,10 +60,51 @@
     padding: 2% 0;
     text-align: center;
 }
+.contact h1, 
+.contact img {
+    margin-bottom: 2%;
+}
 .contact h1 span {
     font-family: 'Knewave', sans-serif;
+    color: #00B478;
+    text-shadow: 2px 2px #040D17;
     text-transform: uppercase;
-    text-shadow: 2px 2px #A9DCFC;
+}
+
+/***** ABOUT PAGE ******/
+.about-header {
+    background-color: #FFF;
+    margin: 0;
+    color: #18191B;
+    text-align: center;
+}
+.about-header span {
+    font-family: 'Knewave', sans-serif;
+    font-size: 2em;
+    color: #00B478;
+    text-shadow: 2px 2px #040D17;
+    text-transform: uppercase;
+    margin: 20px;
+}
+.about-main {
+    padding: 2% 0;  
+    color: #040D17;
+    text-align: center;
+}
+.about-main h3 {
+    font-size: 2.4em;
+    font-weight: bold;
+    color: #00B478;
+}
+.feature {
+    margin: 2%;
+    padding: 4%;
+}
+.feature img {
+    border-radius: 5px;
+    max-height: 250px;
+    width: auto;
+    margin: auto;
 }
 @media (min-width: 414px) {
     .dropdown-menu {
@@ -79,7 +124,7 @@
     }
     .call-to-action img {
         width: 90px;
-    }
+    }   
 }
 @media (min-width: 768px) {
     .carousel-style .carousel-inner .item {
@@ -91,11 +136,17 @@
     .carousel-style p {
         font-size: 1.8em;
     }
+    .how-it-works {
+        padding: 5% 0;
+    }
     .call-to-action h1 {
         font-size: 2.5em; 
     }
     .call-to-action img {
         width: 150px;
         padding:20% 0;
+    }
+    .about-header img {
+        width: 150px;
     }
 }
