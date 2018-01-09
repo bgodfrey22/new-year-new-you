@@ -80,7 +80,7 @@
 }
 .about-header span {
     font-family: 'Knewave', sans-serif;
-    font-size: 2em;
+    font-size: 1.5em;
     color: #00B478;
     text-shadow: 2px 2px #040D17;
     text-transform: uppercase;
@@ -138,6 +138,10 @@
     }
     .how-it-works {
         padding: 5% 0;
+    }
+    .step-panel {
+        padding: 4%;
+        font-size: 1.8rem;
     }
     .call-to-action h1 {
         font-size: 2.5em; 
