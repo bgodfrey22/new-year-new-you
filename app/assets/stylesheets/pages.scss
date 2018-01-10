@@ -73,16 +73,16 @@
 
 /***** ABOUT PAGE ******/
 .about-header {
-    background-color: #FFF;
+    background-color: #040D17;
     margin: 0;
-    color: #18191B;
+    color: #D10342;
     text-align: center;
 }
 .about-header span {
     font-family: 'Knewave', sans-serif;
     font-size: 1.5em;
     color: #00B478;
-    text-shadow: 2px 2px #040D17;
+    text-shadow: 2px 2px #FFF;
     text-transform: uppercase;
     margin: 20px;
 }
@@ -139,6 +139,9 @@
     .how-it-works {
         padding: 5% 0;
     }
+    .contact {
+        padding: 5% 0;
+    }
     .step-panel {
         padding: 4%;
         font-size: 1.8rem;
@@ -152,5 +155,8 @@
     }
     .about-header img {
         width: 150px;
+    }
+    .about-meet .panel {
+        height: 300px;
     }
 }
