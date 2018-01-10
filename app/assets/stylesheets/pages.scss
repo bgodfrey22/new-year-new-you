@@ -1,34 +1,4 @@
-body {
-    background-color: #18191B;
-    font-family: 'Source Sans Pro', sans-serif;
-}
-.nav-style {
-    background-color: transparent;
-    margin: 0;
-    border-radius: 0;
-    position: static;
-    z-index: 150;
-    width: 100%;
-}
-.icon-bar {
-    background-color: #A9DCFC;
-}
-.nav-style .navbar-brand {
-    font-family: 'Knewave', cursive;
-    font-size: 3em;
-    color: #A9DCFC;
-}
-.nav-style a {
-    color: #A9DCFC;
-    text-transform: uppercase;
-}
-.nav li a:hover, 
-.nav li a:focus {
-    background-color: #FFF;
-}
-.dropdown li a {
-    color: #FFF;
-}
+/***** HOME PAGE ******/
 .carousel-style .carousel-inner .item {
     max-height: 250px; 
     background-position: center center; 
@@ -42,35 +12,104 @@ body {
     font-size: 2em;
 }
 .call-to-action {
-    background-color: #A9DCFC;
     text-align: center;
     padding: 5% 0;
-    font-family: 'Knewave', cursive;
-    font-size: 2em;
-    color: #18191B;
+    color: #040D17;
+}
+.call-to-action h1 {
+    font-family: 'Knewave', sans-serif;
+    font-size: 1.8em;
 }
 .call-to-action span {
-    font-size: 2em;
-    color: #FFF;
+    font-size: 2.4em;
+    color: #00B478;
+    text-shadow: 2px 2px #040D17;
     text-transform: uppercase;
-    text-shadow: 2px 2px #18191B;
 }
-.how-it-works {
-    padding: 2% auto;
-    color: #fff;
+.call-to-action img {
+    width: 70px;
+    padding:1% 0;
+}
+.how-it-works,
+.about-meet {
+    width: 100%;
+    color: #D10342;
     text-align: center;
 }
-.how-it-works h1 {
-    font-size: 2em;
-}
-.how-it-works .panel{
+.how-it-works .panel {
     background-color: transparent;
     text-align: center;
+    margin: 2% 0;
+    border: none;
+}
+.how-it-works h1,
+.about-meet h1 {
+    color: #00B478;
+}
+.how-it-works h3,
+.how-it-works span,
+.about-meet h3 {
+    color: #040D17;
 }
 .how-it-works .panel span {
     font-size: 2em;
 }
+.contact {
+    background-color: #FFF;
+    width: 100%;
+    padding: 2% 0;
+    text-align: center;
+}
+.contact h1, 
+.contact img {
+    margin-bottom: 2%;
+}
+.contact h1 span {
+    font-family: 'Knewave', sans-serif;
+    color: #00B478;
+    text-shadow: 2px 2px #040D17;
+    text-transform: uppercase;
+}
+
+/***** ABOUT PAGE ******/
+.about-header {
+    background-color: #040D17;
+    margin: 0;
+    color: #D10342;
+    text-align: center;
+}
+.about-header span {
+    font-family: 'Knewave', sans-serif;
+    font-size: 1.5em;
+    color: #00B478;
+    text-shadow: 2px 2px #FFF;
+    text-transform: uppercase;
+    margin: 20px;
+}
+.about-main {
+    padding: 2% 0;  
+    color: #040D17;
+    text-align: center;
+}
+.about-main h3 {
+    font-size: 2.4em;
+    font-weight: bold;
+    color: #00B478;
+}
+.feature {
+    margin: 2%;
+    padding: 4%;
+}
+.feature img {
+    border-radius: 5px;
+    max-height: 250px;
+    width: auto;
+    margin: auto;
+}
 @media (min-width: 414px) {
+    .dropdown-menu {
+        background-color: #18191B;
+    }
     .carousel-style .carousel-inner .item {
         max-height: 325px; 
     }
@@ -80,9 +119,12 @@ body {
     .carousel-style p {
         font-size: 1.2em;
     }
-    .dropdown-menu {
-        background-color: #18191B;
+    .call-to-action h1 {
+        font-size: 2em; 
     }
+    .call-to-action img {
+        width: 90px;
+    }   
 }
 @media (min-width: 768px) {
     .carousel-style .carousel-inner .item {
@@ -93,5 +135,28 @@ body {
     }
     .carousel-style p {
         font-size: 1.8em;
+    }
+    .how-it-works {
+        padding: 5% 0;
+    }
+    .contact {
+        padding: 5% 0;
+    }
+    .step-panel {
+        padding: 4%;
+        font-size: 1.8rem;
+    }
+    .call-to-action h1 {
+        font-size: 2.5em; 
+    }
+    .call-to-action img {
+        width: 150px;
+        padding:20% 0;
+    }
+    .about-header img {
+        width: 150px;
+    }
+    .about-meet .panel {
+        height: 300px;
     }
 }

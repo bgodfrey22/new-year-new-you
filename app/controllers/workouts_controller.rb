@@ -16,13 +16,18 @@ class WorkoutsController < ApplicationController
   end
 
   def create
-    @workout = Workout.new(workout_params)
-  
+    @workout = Workout.create(workout_params)
+    redirect_to @workout 
+  end
+
+  def update
     respond_to do |format|
-      if @workout.save
-        format.html { redirect_to @workout, notice: 'Workout was successfully created.' }
+      if @workout.update(workout_params)
+        format.html { redirect_to @workout, notice: 'Exercise was successfully updated.' }
+        format.json { render :show, status: :ok, location: @workout }
       else
-        format.html { render :new }
+        format.html { render :edit }
+        format.json { render json: @workout.errors, status: :unprocessable_entity }
       end
     end
   end

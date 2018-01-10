@@ -16,6 +16,11 @@
     <%= form.text_field :label, id: :workout_label, class: 'form-control' %>
   </div>
 
+  <div>
+    <%= form.collection_check_boxes :exercise_id, Exercise.all, :id, :name %>
+  <div>
+
+
   <div class="actions">
     <%= form.submit %>
   </div>
