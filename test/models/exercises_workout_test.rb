@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ExcercisesWorkoutTest < ActiveSupport::TestCase
+class ExercisesWorkoutTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
