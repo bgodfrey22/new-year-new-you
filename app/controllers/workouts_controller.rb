@@ -16,8 +16,8 @@ class WorkoutsController < ApplicationController
   end
 
   def create
-    @workout = Workout.new(workout_params)
-
+    @workout = Workout.create(workout_params)
+    redirect_to @workout 
   end
 
   def update
@@ -47,6 +47,6 @@ class WorkoutsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def workout_params
-    params.require(:workout).permit(:label, :exercise_id)
+    params.require(:workout).permit(:label)
   end
 end
