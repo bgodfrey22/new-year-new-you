@@ -1,5 +1,5 @@
 class WorkoutsController < ApplicationController
-  before_action :set_workout, only: [:show, :edit, :update, :destroy]
+  before_action :set_workout, only: [:add_exercise, :show, :edit, :update, :destroy]
 
   def index
     @workouts = Workout.all 
@@ -13,6 +13,12 @@ class WorkoutsController < ApplicationController
   end
 
   def edit
+  end
+
+  def connect_exercise
+  end 
+
+  def add_exercise
   end
 
   def create

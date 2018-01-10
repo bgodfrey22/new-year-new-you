@@ -5,6 +5,8 @@
   <%= @workout.label %>
 </p>
 
+<%= link_to  "Add Exercise", add_exercise_path(id: @workout.id), class: 'btn btn-default' %>
+
 
 <%= link_to 'Edit', edit_workout_path(@workout) %> |
 <%= link_to 'Back', workouts_path %>
