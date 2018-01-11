@@ -16,8 +16,12 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Workouts", workouts_path %></li>
+        
+        <% if can? :manage, Exercise %>
         <li><%= link_to "Exercises", exercises_path %></li>
+        <% end %>
+
+        <li><%= link_to "Workouts", workouts_path %></li>
         <li><a href="/about">About</a></li>
         <li><a href="/contact">Contact</a></li>
         <% if user_signed_in? %>
@@ -27,7 +31,10 @@
               <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
+              <% if current_user.avatar? %>
               <li><%= link_to current_user.display_avatar %></li>
+              <% end %>
+
               <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
               <li><a href="#">Manage Exercises</a></li>
               <li role="separator" class="divider"></li>

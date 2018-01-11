@@ -16,6 +16,7 @@ class WorkoutsController < ApplicationController
   end
 
   def connect_exercise
+    @connect_exercise = ExercisesWorkout.create(exercise_id: params[@exercises.current_id], workout_id: params[@workout.current_id])
   end 
 
   def add_exercise
@@ -53,6 +54,6 @@ class WorkoutsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def workout_params
-    params.require(:workout).permit(:label, :exercise_id)
+    params.require(:workout).permit(:label, :exercises)
   end
 end
