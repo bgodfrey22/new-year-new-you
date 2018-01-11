@@ -38,10 +38,13 @@ body {
 .nav-style a {
     color: #00B478;
     text-transform: uppercase;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
 }
 .nav li a:hover, 
 .nav li a:focus {
-    background-color: #040D17;
+    background-color: transparent;
+    border-bottom: 3px solid #D10342;
     color: #D10342;
 }
 .dropdown li a {

@@ -1,5 +1,6 @@
 class ExercisesController < ApplicationController
   before_action :set_exercise, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:show]
   
   # GET /exercises
   def index
