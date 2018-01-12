@@ -1,8 +1,7 @@
 <h1>Add Exercises to <%= @workout.label %></h1>
 
 <%= form_tag add_exercise_path do %>
-    <%= collection_select(:workout, :exercises, Exercise.all, :id, :name) %>
+    <%= collection_select(:exercises_workout, :exercise_id, Exercise.all, :id, :name) %>
+    <%= hidden_field :exercises_workout, :workout_id, value: @workout.id %>
     <%= submit_tag "Add Exercise" %>
 <% end %>
-
-
