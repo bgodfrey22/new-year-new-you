@@ -1,12 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Label:</strong>
-  <%= @workout.label %>
-</p>
+<h3><%= @workout.label %></h3>
+
+<div class="row">
+  <% @workout.exercises.each do |exercise| %>
+  <div class="col-sm-4">
+    <div class="panel">
+      <div class="panel-head">
+        <%= exercise.name %>
+      </div>
+      <div class="panel-body">
+        <%if exercise.image? %>
+          <%= exercise.image %>
+        <% end %>
+        <%= exercise.muscle_group %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+
 
 <%= link_to  "Add Exercise", add_exercise_path(id: @workout.id), class: 'btn btn-default' %>
-
-
-
-<%= link_to 'Back', workouts_path %>
+<%= link_to 'Edit Workout', edit_workout_path(@workout), class: 'btn btn-warning' %>
+<%= link_to 'Delete Workout', @workout, method: :delete, data: { confirm: 'Are you sure you want to delete this workout?' }, class: 'btn btn-danger' %>
+<%= link_to 'All Workouts', workouts_path, class: 'btn btn-primary' %>
