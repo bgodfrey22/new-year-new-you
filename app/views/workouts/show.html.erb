@@ -4,14 +4,14 @@
 
 <div class="row">
   <% @workout.exercises.each do |exercise| %>
-  <div class="col-sm-4">
-    <div class="panel">
-      <div class="panel-head">
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
         <%= exercise.name %>
       </div>
       <div class="panel-body">
         <%if exercise.image? %>
-          <%= exercise.image %>
+          <%= image_tag exercise.image, class: 'img-responsive' %>
         <% end %>
         <%= exercise.muscle_group %>
       </div>
@@ -19,7 +19,6 @@
   </div>
   <% end %>
 </div>
-
 
 <%= link_to  "Add Exercise", add_exercise_path(id: @workout.id), class: 'btn btn-default' %>
 <%= link_to 'Edit Workout', edit_workout_path(@workout), class: 'btn btn-warning' %>
