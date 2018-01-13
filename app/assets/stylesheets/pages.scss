@@ -14,16 +14,15 @@
 .call-to-action {
     text-align: center;
     padding: 5% 0;
-    color: #040D17;
+    color: #ECF0F1;
 }
 .call-to-action h1 {
-    font-family: 'Knewave', sans-serif;
+    font-family: 'Monoton', sans-serif;
     font-size: 1.8em;
 }
 .call-to-action span {
     font-size: 2.4em;
-    color: #00B478;
-    text-shadow: 2px 2px #040D17;
+    color: #E73548;
     text-transform: uppercase;
 }
 .call-to-action img {
@@ -33,29 +32,22 @@
 .how-it-works,
 .about-meet {
     width: 100%;
-    color: #D10342;
+    color: #2DFFD4;
     text-align: center;
-}
-.how-it-works .panel {
-    background-color: transparent;
-    text-align: center;
-    margin: 2% 0;
-    border: none;
 }
 .how-it-works h1,
 .about-meet h1 {
-    color: #00B478;
+    color: #E73548;
+    font-weight: 900;
+    margin: 0;
 }
 .how-it-works h3,
 .how-it-works span,
 .about-meet h3 {
-    color: #040D17;
-}
-.how-it-works .panel span {
-    font-size: 2em;
+    font-weight: 900;
 }
 .contact {
-    background-color: #FFF;
+    color: #ECF0F1;
     width: 100%;
     padding: 2% 0;
     text-align: center;
@@ -65,36 +57,43 @@
     margin-bottom: 2%;
 }
 .contact h1 span {
-    font-family: 'Knewave', sans-serif;
-    color: #00B478;
-    text-shadow: 2px 2px #040D17;
+    font-family: 'Monoton', sans-serif;
+    color: #E73548;
     text-transform: uppercase;
 }
 
 /***** ABOUT PAGE ******/
 .about-header {
-    background-color: #040D17;
+    background-color: transparent;
     margin: 0;
-    color: #D10342;
+    color: #ECF0F1;
     text-align: center;
 }
+.about-header h1 {
+    font-size: 3.5em;
+}
 .about-header span {
-    font-family: 'Knewave', sans-serif;
+    font-family: 'Monoton', sans-serif;
     font-size: 1.5em;
-    color: #00B478;
-    text-shadow: 2px 2px #FFF;
+    color: #E73548;
     text-transform: uppercase;
     margin: 20px;
 }
-.about-main {
+.about-main,
+.about-meet {
+    background-color: #ECF0F1;
     padding: 2% 0;  
     color: #040D17;
     text-align: center;
 }
 .about-main h3 {
-    font-size: 2.4em;
+    font-size: 2.2em;
     font-weight: bold;
-    color: #00B478;
+    color: #E73548;
+}
+.about-main p {
+    font-size: 1.4em;
+    line-height: 1.6em;
 }
 .feature {
     margin: 2%;
@@ -106,9 +105,24 @@
     width: auto;
     margin: auto;
 }
+.about-meet h1 {
+    color: #E73548;
+    margin: 2%;
+}
+.about-meet .panel {
+    background-color: transparent;
+    margin: 2%;
+    border: 1px #040D17 solid;
+    line-height: 1.8em;
+    color: #040D17;
+}
+.about-meet .panel h3,
+.about-meet .panel h4 {
+    color: #040D17;
+}
 @media (min-width: 414px) {
     .dropdown-menu {
-        background-color: #18191B;
+        background-color: #040D17;
     }
     .carousel-style .carousel-inner .item {
         max-height: 325px; 
@@ -124,7 +138,7 @@
     }
     .call-to-action img {
         width: 90px;
-    }   
+    }
 }
 @media (min-width: 768px) {
     .carousel-style .carousel-inner .item {
@@ -155,8 +169,5 @@
     }
     .about-header img {
         width: 150px;
-    }
-    .about-meet .panel {
-        height: 300px;
     }
 }
