@@ -11,6 +11,7 @@ class WorkoutsController < ApplicationController
 
   def new
     @workout = Workout.new
+    @workout.exercises.build
   end
 
   def edit
@@ -27,28 +28,22 @@ class WorkoutsController < ApplicationController
   def create
     @workout = Workout.new(workout_params)
     if @workout.save
-      redirect_to root_path
+      redirect_to workouts_path(id: params[:id])
     else
       render :new
     end
   end
 
   def update
-    @workout = Workout.find_by(id: params[:id])
-    if @workout.update_attributes(workout_params)
-      redirect_to root_path
-    else
-      render :edit
+    respond_to do |format|
+     if @workout.update(workout_params)
+       format.html { redirect_to @workout, notice: 'Exercise was successfully updated.' }
+       format.json { render :show, status: :ok, location: @workout }
+     else
+       format.html { render :edit }
+       format.json { render json: @workout.errors, status: :unprocessable_entity }
+     end
     end
-    # respond_to do |format|
-    #   if @workout.update(workout_params)
-    #     format.html { redirect_to @workout, notice: 'Exercise was successfully updated.' }
-    #     format.json { render :show, status: :ok, location: @workout }
-    #   else
-    #     format.html { render :edit }
-    #     format.json { render json: @workout.errors, status: :unprocessable_entity }
-    #   end
-    # end
   end
 
   def destroy
@@ -66,9 +61,9 @@ class WorkoutsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def workout_params
-    params.require(:workout).permit(:label, :exercise)
+    params.require(:workout).permit(:label, exercises_attributes: [:name, :muscle_group])
   end
   def exercises_workout_params
-    params.require(:exercises_workout).permit(:exercise_id, :workout_id)
+    params.require(:exercises_workout).permit(:exercise_id, :workout_id, :destroy)
   end
 end
