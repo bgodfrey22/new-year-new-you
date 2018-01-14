@@ -1,7 +1,4 @@
 class ExercisesWorkout < ApplicationRecord
-    attr_accessible :exercise,
-                    :exercise_attribues
-
     belongs_to :exercise
     belongs_to :workout
 

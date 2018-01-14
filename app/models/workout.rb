@@ -1,7 +1,4 @@
 class Workout < ApplicationRecord
-    attr_accessible :label
-                    :exercises_workouts_attributes
-
     has_many :exercises_workouts, dependent: :destroy
     has_many :exercises, through: :exercises_workouts
 
