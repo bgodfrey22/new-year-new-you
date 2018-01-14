@@ -17,45 +17,16 @@
   </div>
 
   <div>
-    <p><strong>Exercises:</strong></p>
-
+    <%= f.label :exercise %>
     <%= f.fields_for @workout.exercises do |exercise| %>
-      <div>
-        <%= form_tag add_exercise_path do %>
           <%= collection_select(:exercises_workout, :exercise_id, Exercise.all, :id, :name) %>
-          <%= hidden_field :exercises_workout, :workout_id, value: @workout.id %>
-        <% end %>
-      </div>
     <% end %>
   </div>
 
+  <%= hidden_field :exercises_workout, :workout_id, value: workout.id %>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>
-
-
-
-
-<!-- <%= form_with(model: workout, local: true) do |form| %>
-  <% if workout.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(workout.errors.count, "error") %> prohibited this exercise from being saved:</h2>
-
-      <ul>
-      <% workout.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="form-group">
-    <%= form.label :label %>
-    <%= form.text_field :label, id: :workout_label, class: 'form-control' %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %> -->
