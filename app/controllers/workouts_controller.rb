@@ -25,20 +25,30 @@ class WorkoutsController < ApplicationController
   end
 
   def create
-    @workout = Workout.create(workout_params)
-    redirect_to @workout 
+    @workout = Workout.new(workout_params)
+    if @workout.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def update
-    respond_to do |format|
-      if @workout.update(workout_params)
-        format.html { redirect_to @workout, notice: 'Exercise was successfully updated.' }
-        format.json { render :show, status: :ok, location: @workout }
-      else
-        format.html { render :edit }
-        format.json { render json: @workout.errors, status: :unprocessable_entity }
-      end
+    @workout = Workout.find_by(id: params[:id])
+    if @workout.update_attributes(workout_params)
+      redirect_to root_path
+    else
+      render :edit
     end
+    # respond_to do |format|
+    #   if @workout.update(workout_params)
+    #     format.html { redirect_to @workout, notice: 'Exercise was successfully updated.' }
+    #     format.json { render :show, status: :ok, location: @workout }
+    #   else
+    #     format.html { render :edit }
+    #     format.json { render json: @workout.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   def destroy
