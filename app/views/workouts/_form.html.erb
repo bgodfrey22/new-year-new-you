@@ -12,19 +12,19 @@
   <% end %>
 
   <div>
-    <%= f.label :label %>
+    <p>Workout Name:</p>
     <%= f.text_field :label %>
   </div>
 
   <div>
-    <%= f.label :exercise %>
+    <p>Choose Your Exercises:</p>
     <%= f.fields_for @workout.exercises do |exercise| %>
           <%= collection_select(:exercises_workout, :exercise_id, Exercise.all, :id, :name) %>
     <% end %>
   </div>
 
   <%= hidden_field :exercises_workout, :workout_id, value: workout.id %>
-  
+
   <div class="actions">
     <%= f.submit %>
   </div>
