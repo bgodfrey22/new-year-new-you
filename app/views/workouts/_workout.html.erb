@@ -1,0 +1,19 @@
+<% if @workouts.any? %>
+
+<div class="row">
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading"><%= workout.label %></div>
+                <div class="panel-body">
+                    <% workout.exercises.each do |exercise| %>
+                        <p><%= exercise.name %></p>
+                    <% end %>
+                </div>
+                <div class="panel-footer">
+                    <%= link_to 'View Workout', workout %>
+                </div>
+            </div> <!-- Panel class -->
+        </div> <!-- Col-sm-4 -->
+</div> <!-- row -->
+
+<% end %>

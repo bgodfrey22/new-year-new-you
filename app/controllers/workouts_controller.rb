@@ -1,5 +1,5 @@
 class WorkoutsController < ApplicationController
-  before_action :set_workout, only: [:add_exercise, :show, :edit, :update, :destroy]
+  before_action :set_workout, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
   def index
@@ -11,34 +11,32 @@ class WorkoutsController < ApplicationController
 
   def new
     @workout = Workout.new
+    @exercises_workout = ExercisesWorkout.new
+  end
+
+  def create
+    @workout = Workout.create(workout_params)
+    if @workout.save
+      redirect_to workouts_path(@workout)
+    else
+      render :new
+    end
   end
 
   def edit
   end
 
-  def connect_exercise
-    @connect_exercise = ExercisesWorkout.create(exercises_workout_params)
-    redirect_to workouts_path(id: params[:id])
-  end 
-
-  def add_exercise
-  end
-
-  def create
-    @workout = Workout.create(workout_params)
-    redirect_to @workout 
-  end
-
   def update
-    respond_to do |format|
-      if @workout.update(workout_params)
-        format.html { redirect_to @workout, notice: 'Exercise was successfully updated.' }
-        format.json { render :show, status: :ok, location: @workout }
-      else
-        format.html { render :edit }
-        format.json { render json: @workout.errors, status: :unprocessable_entity }
-      end
+    if @workout.update_attributes(workout_params)
+      redirect_to workouts_path(@workout)
+    else
+      render :edit
     end
+  end
+  
+  def delete_exercise
+    exercises_workout = ExercisesWorkout.find(params[:id])
+    exercises_workout.destroy
   end
 
   def destroy
@@ -56,9 +54,6 @@ class WorkoutsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def workout_params
-    params.require(:workout).permit(:label, :exercise)
-  end
-  def exercises_workout_params
-    params.require(:exercises_workout).permit(:exercise_id, :workout_id)
+    params.require(:workout).permit(:label, exercises_workouts_attributes: [:id, :exercise_id, :_destroy])
   end
 end

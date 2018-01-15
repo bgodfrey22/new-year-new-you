@@ -1,22 +1,35 @@
-<%= form_with(model: workout, local: true) do |form| %>
+<%= form_for @workout do |f| %>
   <% if workout.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(workout.errors.count, "error") %> prohibited this exercise from being saved:</h2>
+  <div id="error_explanation">
+    <h2><%= pluralize(workout.errors.count, "error") %> prohibited this exercise from being saved:</h2>
 
-      <ul>
-      <% workout.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+    <ul>
+    <% workout.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
   <% end %>
 
-  <div class="form-group">
-    <%= form.label :label %>
-    <%= form.text_field :label, id: :workout_label, class: 'form-control' %>
+  <div>
+    <p>Workout Name:</p>
+    <%= f.text_field :label %>
+  </div>
+
+  <div>
+    <p>Choose Your Exercise to Add:</p>
+    <div id="exercises_workout">
+    <%= f.fields_for :exercises_workouts do |exercise| %>
+      <%= render 'exercises_workout_fields', f: exercise %>
+      <% end %>
+      <div class="links">
+          <%= link_to_add_association 'add exercises_workout', f, :exercises_workouts %>
+      </div>
+    </div>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= f.submit %>
   </div>
+
 <% end %>

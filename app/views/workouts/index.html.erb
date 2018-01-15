@@ -1,21 +1,7 @@
 <div class="workouts">
 <h1>All Workouts</h1>
 
-<div class="row">
-    <% @workouts.each do |workout| %>
-        <div class="col-sm-4">
-            <div class="panel">
-                <div class="panel-heading"><%= workout.label %></div>
-                <div class="panel-body">
-                    <% workout.exercises.each do |exercise| %>
-                        <p><%= exercise.name %></p>
-                    <% end %>
-                    <%= link_to 'View Workout', workout, class: 'btn btn-default' %>
-                </div>
-            </div> <!-- Panel class -->
-        </div> <!-- Col-sm-4 -->
-    <% end %>
-</div> <!-- row -->
-
+<%= render @workouts %>
+             
 <%= link_to 'Create New Workout', new_workout_path, class: 'btn btn-default' %>
 </div>
