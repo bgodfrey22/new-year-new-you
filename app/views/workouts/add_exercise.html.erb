@@ -1,3 +1,5 @@
+<div class="workouts">
+
 <h1>Add Exercises to <%= @workout.label %></h1>
 
 <%= form_tag add_exercise_path do %>
@@ -5,3 +7,5 @@
     <%= hidden_field :exercises_workout, :workout_id, value: @workout.id %>
     <%= submit_tag "Add Exercise" %>
 <% end %>
+
+</div>

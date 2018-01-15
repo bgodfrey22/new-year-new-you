@@ -5,13 +5,14 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css?family=Knewave|Source+Sans+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Monoton|Raleway" rel="stylesheet">
     
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://use.fontawesome.com/aa23584a00.js"></script>
   </head>
 
   <body>
+    <%= stylesheet_link_tag 'pages' %>
     <%= render 'layouts/navbar' %>
     <%= yield %>
     

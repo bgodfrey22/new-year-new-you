@@ -15,8 +15,9 @@
  @import "bootstrap";
 
 body {
-    background-color: transparent;
-    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #07161C;
+    font-family: 'Raleway', sans-serif;
+    color: #E73548;
 }
 .nav-style {
     background-color: transparent;
@@ -27,16 +28,16 @@ body {
     width: 100%;
 }
 .icon-bar {
-    background-color: #00B478;
+    background-color: #E73548;
 }
 .nav-style .navbar-brand {
-    font-family: 'Knewave', cursive;
+    font-family: 'Monoton', cursive;
     font-size: 2rem;
-    color: #00B478;
-    text-shadow: 1px 1px #040D17;
+    color: #E73548;
+
 }
 .nav-style a {
-    color: #00B478;
+    color: #ECF0F1;
     text-transform: uppercase;
     border-top: 3px solid transparent;
     border-bottom: 3px solid transparent;
@@ -44,23 +45,23 @@ body {
 .nav li a:hover, 
 .nav li a:focus {
     background-color: transparent;
-    border-bottom: 3px solid #D10342;
-    color: #D10342;
+    border-bottom: 3px solid #E73548;
+    color: #E73548;
 }
 .dropdown li a {
-    color: #00B478;
+    color: #ECF0F1;
 }
 .dropdown li a:hover {
-    color: #D10342;
+    color: #E73548;
 }
 footer {
     text-align: center;
-    color: #00B478;
+    color: #E73548;
 }
 .connect-icons {
     padding: 2% 0;
 }
 .connect-icons a {
     padding: 0 4%;
-    color: #00B478;
-}
+    color: #E73548;
+}   
