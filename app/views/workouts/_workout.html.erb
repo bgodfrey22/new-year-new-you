@@ -1,13 +1,11 @@
 <div class="col-sm-4">
-    <div class="panel panel-default">
+    <div class="panel ">
         <div class="panel-heading"><%= workout.label %></div>
         <div class="panel-body">
             <% workout.exercises.each do |exercise| %>
                 <p><%= exercise.name %></p>
             <% end %>
-        </div>
-        <div class="panel-footer">
-            <%= link_to 'View Workout', workout %>
+            <%= link_to 'View Workout', workout, class: 'btn', id: 'view-workout-link' %>
         </div>
     </div> <!-- Panel class -->
 </div> <!-- Col-sm-4 -->

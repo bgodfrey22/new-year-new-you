@@ -131,13 +131,35 @@
 .workouts .panel {
     border: 1px solid #040D17;
 }
-.workouts .panel-heading, {
+.workouts .panel-heading {
     background-color: #E73548;
     color: #040D17;
     text-transform: uppercase;
     font-size: 1.5em;
 }
-
+.workouts .panel img {
+    max-height: 200px;
+}
+#view-workout-link {
+    background-color: #E73548;
+    border-color: #E73548;
+    color: #ECF0F1
+}
+#edit-workout-link {
+    background-color: #E73548;
+    border-color: #E73548;
+    color: #ECF0F1
+}
+#delete-workout-link {
+    background-color: #040D17;
+    border-color: #ECF0F1;
+    color: #ECF0F1;
+}
+#all-workouts-link {
+    background-color: #2DFFD4;
+    border-color: #2DFFD4;
+    color: #040D17;
+}
 @media (min-width: 414px) {
     .dropdown-menu {
         background-color: #040D17;

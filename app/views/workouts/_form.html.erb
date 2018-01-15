@@ -11,13 +11,13 @@
   </div>
   <% end %>
 
-  <div>
+  <div class="form-group">
     <p>Workout Name:</p>
-    <%= f.text_field :label %>
+    <%= f.text_field :label, class: 'form-control' %>
   </div>
 
-  <div>
-    <p>Choose Your Exercise to Add:</p>
+  <div class="form-group">
+    <p>Choose Exercises:</p>
     <div id="exercises_workout">
     <%= f.fields_for :exercises_workouts do |exercise| %>
       <%= render 'exercises_workout_fields', f: exercise %>

@@ -3,7 +3,7 @@
   <%= hidden_field :exercises_workout, :workout_id, value: @workout.id %>
 </div> -->
 
-<div class="nested-fields">
+<div class="nested-fields form-group">
   <%= f.select :exercise_id, Exercise.all.collect { |e| [e.name, e.id] }, :include_blank => true %>
   <%= link_to_remove_association "remove exercise", f %>
 </div>
