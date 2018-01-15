@@ -18,13 +18,14 @@
 
   <div>
     <p>Choose Your Exercise to Add:</p>
-    <%= f.fields_for @workout.exercises do |exercise| %>
-      <%= render 'exercise_fields', f: exercise %>
-    <% end %>
-  </div>
-
-  <div class="links">
-    <%= link_to_add_association 'add exercise', f, :exercises %>
+    <div id="exercises_workout">
+    <%= f.fields_for :exercises_workouts do |exercise| %>
+      <%= render 'exercises_workout_fields', f: exercise %>
+      <% end %>
+      <div class="links">
+          <%= link_to_add_association 'add exercises_workout', f, :exercises_workouts %>
+      </div>
+    </div>
   </div>
 
   <div class="actions">
@@ -32,23 +33,3 @@
   </div>
 
 <% end %>
-
-<!-- <% if @workout.exercises.exists? %>
-    <div class="row">
-      <% @workout.exercises.each do |exercise| %>
-      <div class="col-sm-6">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <%= exercise.name %>
-          </div>
-          <div class="panel-body">
-            <%if exercise.image? %>
-              <%= image_tag exercise.image, class: 'img-responsive' %>
-            <% end %>
-            <%= exercise.muscle_group %>
-          </div> 
-        </div> 
-      </div> 
-      <% end %>
-    </div> 
-  <% end %> -->

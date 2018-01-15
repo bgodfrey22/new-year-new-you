@@ -1,4 +1,0 @@
-<div class="nested-fields">
-  <%= collection_select(:exercises_workout, :exercise_id, Exercise.all, :id, :name, :include_blank => true) %>
-  <%= hidden_field :exercises_workout, :workout_id, value: @workout.id %>
-</div>

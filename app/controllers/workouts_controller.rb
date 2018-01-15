@@ -1,5 +1,5 @@
 class WorkoutsController < ApplicationController
-  before_action :set_workout, only: [:add_exercise, :show, :edit, :update, :destroy]
+  before_action :set_workout, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
   def index
@@ -17,7 +17,7 @@ class WorkoutsController < ApplicationController
   def create
     @workout = Workout.create(workout_params)
     if @workout.save
-      redirect_to edit_workout_path(@workout.id)
+      redirect_to workouts_path(@workout)
     else
       render :new
     end
@@ -27,10 +27,8 @@ class WorkoutsController < ApplicationController
   end
 
   def update
-    @workout = Workout.find_by(id: params[:id])
-    @exercises_workout = ExercisesWorkout.create(exercises_workout_params)
     if @workout.update_attributes(workout_params)
-      redirect_to workouts_path(@workout.id)
+      redirect_to workouts_path(@workout)
     else
       render :edit
     end
@@ -56,9 +54,6 @@ class WorkoutsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def workout_params
-    params.require(:workout).permit(:label)
-  end
-  def exercises_workout_params
-    params.require(:exercises_workout).permit(:exercise_id, :workout_id, )
+    params.require(:workout).permit(:label, exercises_workouts_attributes: [:id, :exercise_id, :_destroy])
   end
 end
