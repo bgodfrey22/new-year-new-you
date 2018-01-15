@@ -2,23 +2,25 @@
 
 <h3><%= @workout.label %></h3>
 
-<div class="row">
-  <% @workout.exercises.each do |exercise| %>
-  <div class="col-sm-6">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <%= exercise.name %>
-      </div>
-      <div class="panel-body">
-        <%if exercise.image? %>
-          <%= image_tag exercise.image, class: 'img-responsive' %>
-        <% end %>
-        <%= exercise.muscle_group %>
-      </div>
-    </div>
-  </div>
+<% if @workout.exercises.exists? %>
+    <div class="row">
+      <% @workout.exercises.each do |exercise| %>
+      <div class="col-sm-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <%= exercise.name %>
+          </div>
+          <div class="panel-body">
+            <%if exercise.image? %>
+              <%= image_tag exercise.image, class: 'img-responsive' %>
+            <% end %>
+            <%= exercise.muscle_group %>
+          </div> 
+        </div> 
+      </div> 
+      <% end %>
+    </div> 
   <% end %>
-</div>
 
 <%= link_to 'Edit Workout', edit_workout_path(@workout), class: 'btn btn-warning' %>
 <%= link_to 'Delete Workout', @workout, method: :delete, data: { confirm: 'Are you sure you want to delete this workout?' }, class: 'btn btn-danger' %>

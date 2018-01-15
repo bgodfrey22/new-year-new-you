@@ -19,12 +19,21 @@
   <div>
     <p>Choose Your Exercise to Add:</p>
     <%= f.fields_for @workout.exercises do |exercise| %>
-          <%= collection_select(:exercises_workout, :exercise_id, Exercise.all, :id, :name, :include_blank => true) %>
-          <%= hidden_field :exercises_workout, :workout_id, value: workout.id %>
+      <%= render 'exercise_fields', f: exercise %>
     <% end %>
   </div>
 
-  <% if @workout.exercises.exists? %>
+  <div class="links">
+    <%= link_to_add_association 'add exercise', f, :exercises %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
+
+<!-- <% if @workout.exercises.exists? %>
     <div class="row">
       <% @workout.exercises.each do |exercise| %>
       <div class="col-sm-6">
@@ -37,14 +46,9 @@
               <%= image_tag exercise.image, class: 'img-responsive' %>
             <% end %>
             <%= exercise.muscle_group %>
-          </div> <!-- panel-body -->
-        </div> <!-- panel -->
-      </div> <!-- col-sm-6 -->
+          </div> 
+        </div> 
+      </div> 
       <% end %>
-    </div> <!-- row -->
-  <% end %>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-
-<% end %>
+    </div> 
+  <% end %> -->
