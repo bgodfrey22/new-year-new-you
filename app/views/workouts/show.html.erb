@@ -20,7 +20,6 @@
   <% end %>
 </div>
 
-<%= link_to  "Add Exercise", add_exercise_path(id: @workout.id), class: 'btn btn-default' %>
 <%= link_to 'Edit Workout', edit_workout_path(@workout), class: 'btn btn-warning' %>
 <%= link_to 'Delete Workout', @workout, method: :delete, data: { confirm: 'Are you sure you want to delete this workout?' }, class: 'btn btn-danger' %>
 <%= link_to 'All Workouts', workouts_path, class: 'btn btn-primary' %>

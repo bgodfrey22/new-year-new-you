@@ -14,17 +14,6 @@ class WorkoutsController < ApplicationController
     @exercises_workout = ExercisesWorkout.new
   end
 
-  def edit
-  end
-
-  def connect_exercise
-    @connect_exercise = ExercisesWorkout.create(exercises_workout_params)
-    redirect_to workouts_path(id: params[:id])
-  end 
-
-  def add_exercise
-  end
-
   def create
     @workout = Workout.create(workout_params)
     if @workout.save
@@ -32,6 +21,9 @@ class WorkoutsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
   end
 
   def update
@@ -42,6 +34,11 @@ class WorkoutsController < ApplicationController
     else
       render :edit
     end
+  end
+  
+  def delete_exercise
+    exercises_workout = ExercisesWorkout.find(params[:id])
+    exercises_workout.destroy
   end
 
   def destroy
@@ -62,6 +59,6 @@ class WorkoutsController < ApplicationController
     params.require(:workout).permit(:label)
   end
   def exercises_workout_params
-    params.require(:exercises_workout).permit(:exercise_id, :workout_id, :destroy)
+    params.require(:exercises_workout).permit(:exercise_id, :workout_id)
   end
 end

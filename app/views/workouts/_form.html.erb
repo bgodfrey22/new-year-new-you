@@ -17,14 +17,32 @@
   </div>
 
   <div>
-    <p>Choose Your Exercises:</p>
+    <p>Choose Your Exercise to Add:</p>
     <%= f.fields_for @workout.exercises do |exercise| %>
-          <%= collection_select(:exercises_workout, :exercise_id, Exercise.all, :id, :name) %>
+          <%= collection_select(:exercises_workout, :exercise_id, Exercise.all, :id, :name, :include_blank => true) %>
+          <%= hidden_field :exercises_workout, :workout_id, value: workout.id %>
     <% end %>
   </div>
 
-  <%= hidden_field :exercises_workout, :workout_id, value: workout.id %>
-
+  <% if @workout.exercises.exists? %>
+    <div class="row">
+      <% @workout.exercises.each do |exercise| %>
+      <div class="col-sm-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <%= exercise.name %>
+          </div>
+          <div class="panel-body">
+            <%if exercise.image? %>
+              <%= image_tag exercise.image, class: 'img-responsive' %>
+            <% end %>
+            <%= exercise.muscle_group %>
+          </div> <!-- panel-body -->
+        </div> <!-- panel -->
+      </div> <!-- col-sm-6 -->
+      <% end %>
+    </div> <!-- row -->
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>
