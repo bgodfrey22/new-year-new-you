@@ -137,6 +137,7 @@
 }
 .workouts .panel {
     border: 1px solid #040D17;
+    text-align: center; 
 }
 .workouts .panel-heading {
     background-color: #E73548;
@@ -147,30 +148,32 @@
 .workouts .panel img {
     max-height: 200px;
 }
-#create-workout-link {
+#return-workout-link {
     background-color: #ECF0F1;
     border: 2px solid #E73548;
     color: #E73548;
 }
-#view-workout-link {
+#create-workout-link, 
+#edit-workout-link,
+#btn-submit {
     background-color: #E73548;
     border-color: #E73548;
     color: #ECF0F1
 }
-#edit-workout-link {
-    background-color: #E73548;
-    border-color: #E73548;
-    color: #ECF0F1
-}
-#delete-workout-link {
+#delete-workout-link,
+#btn-delete {
     background-color: #040D17;
     border-color: #ECF0F1;
     color: #ECF0F1;
 }
-#all-workouts-link {
+#all-workouts-link,
+#view-workout-link {
     background-color: #2DFFD4;
-    border-color: #2DFFD4;
+    border-color: #040D17;
     color: #040D17;
+}
+#btn-submit {
+    padding: 6px 12px;
 }
 @media (min-width: 414px) {
     .dropdown-menu {

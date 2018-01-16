@@ -31,8 +31,10 @@
   </div>
 
   <div class="actions">
-    <%= f.submit %>
-    <%= link_to 'Cancel Update', @workout, class: 'btn', id: 'view-workout-link' %> 
+    <%= f.submit 'Submit', class: 'btn', id: 'btn-submit' %>
+    <%if @workout.id %>
+      <%= link_to 'Back to Workout', @workout, class: 'btn', id: 'return-workout-link' %> 
+    <% end %>
     <%= link_to 'All Workouts', workouts_path, class: 'btn', id: 'all-workouts-link' %>
   </div>
 </div>
