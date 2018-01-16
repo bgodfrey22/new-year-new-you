@@ -22,11 +22,16 @@
     <p>Choose Exercises:</p>
     <div id="exercises_workout">
     <%= f.fields_for :exercises_workouts do |exercise| %>
-      <%= render 'exercises_workout_fields', f: exercise %>
+      <%= render 'exercises_workout_fields', f: exercise, muscle_group: exercise.object.exercise.muscle_group %>
 
       <% end %>
       <div class="links">
-          <%= link_to_add_association 'Add Exercise', f, :exercises_workouts, class: 'btn btn-default' %>
+        <% Exercise.pluck(:muscle_group).uniq.each do |muscle_group| %>
+          <%= link_to_add_association "Add #{muscle_group} Exercise", 
+                                      f, :exercises_workouts, 
+                                      class: 'btn btn-default',
+                                      render_options: { locals: { muscle_group: muscle_group }} %>
+        <% end %>
       </div>
     </div>
   </div>

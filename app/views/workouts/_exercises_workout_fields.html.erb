@@ -4,7 +4,9 @@
 </div> -->
 
 <div class="nested-fields form-group">
-  <%= f.select :exercise_id, Exercise.all.collect { |e| [e.name, e.id] }, :include_blank => true %>
-  <%= f.select :exercise_id, Exercise.where(muscle_group: 'muscle_group').collect { |e| [e.muscle_group] }, :include_blank => true %>
-  <%= link_to_remove_association "Remove", f, class: 'btn', id: 'btn-delete' %>
+  <% f.select :exercise_id, Exercise.all.collect { |e| [e.name, e.id] }, :include_blank => true %>
+  <%= f.select :exercise_id, Exercise.where(muscle_group: muscle_group).collect { |e| [e.name, e.id] }, :include_blank => true %>
+  <%= link_to_remove_association f, class: 'btn', id: 'btn-delete' do %>
+  <i class="fa fa-times"></i>
+  <% end %>
 </div>

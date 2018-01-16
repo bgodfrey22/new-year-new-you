@@ -30,10 +30,11 @@
         </li>
 
         <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <li><a href="/contact"><i class="fa fa-comments-o" aria-hidden="true"></i>Contact</a></li>
         <% if user_signed_in? %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> 
+              <i class="fa fa-user-o" aria-hidden="true"></i>
               <strong><%= current_user.username %></strong>
               <span class="caret"></span>
             </a>
