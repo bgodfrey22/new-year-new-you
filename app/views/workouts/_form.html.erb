@@ -23,6 +23,7 @@
     <div id="exercises_workout">
     <%= f.fields_for :exercises_workouts do |exercise| %>
       <%= render 'exercises_workout_fields', f: exercise %>
+
       <% end %>
       <div class="links">
           <%= link_to_add_association 'Add Exercise', f, :exercises_workouts, class: 'btn btn-default' %>
