@@ -11,6 +11,8 @@
   </div>
   <% end %>
 
+<div class="row">
+  <div class="col-xs-8 col-md-4">
   <div class="form-group">
     <p>Workout Name:</p>
     <%= f.text_field :label, class: 'form-control' %>
@@ -23,13 +25,16 @@
       <%= render 'exercises_workout_fields', f: exercise %>
       <% end %>
       <div class="links">
-          <%= link_to_add_association 'Add Another Exercise', f, :exercises_workouts, class: 'btn btn-default' %>
+          <%= link_to_add_association 'Add Exercise', f, :exercises_workouts, class: 'btn btn-default' %>
       </div>
     </div>
   </div>
 
   <div class="actions">
     <%= f.submit %>
+    <%= link_to 'Cancel Update', @workout, class: 'btn', id: 'view-workout-link' %> 
+    <%= link_to 'All Workouts', workouts_path, class: 'btn', id: 'all-workouts-link' %>
   </div>
-
+</div>
+</div>
 <% end %>

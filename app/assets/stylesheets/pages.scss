@@ -122,8 +122,15 @@
 }
 
 /***** WORKOUTS PAGES ******/
+.workouts {
+    background-image: url('background-brick-gradient.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 2%;
+}
 .workouts h1 {
-    color: #ECF0F1;
+    color: #040D17;
     text-align: center;
     font-size: 2.2em;
     margin: 5%;
