@@ -4,7 +4,9 @@
 
 <%= render 'form', workout: @workout %>
 
-<%= link_to 'Show', @workout %> |
-<%= link_to 'Back', workouts_path %>
+<br/>
+
+<%= link_to 'Cancel Update', @workout, class: 'btn', id: 'view-workout-link' %> 
+<%= link_to 'All Workouts', workouts_path, class: 'btn', id: 'all-workouts-link' %>
 
 </div>

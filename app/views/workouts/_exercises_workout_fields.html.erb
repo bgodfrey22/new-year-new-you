@@ -5,5 +5,5 @@
 
 <div class="nested-fields form-group">
   <%= f.select :exercise_id, Exercise.all.collect { |e| [e.name, e.id] }, :include_blank => true %>
-  <%= link_to_remove_association "remove exercise", f %>
+  <%= link_to_remove_association "Remove", f %>
 </div>

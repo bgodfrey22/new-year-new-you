@@ -16,7 +16,10 @@ gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'jquery-rails'
+gem 'font-awesome-rails'
 gem 'carrierwave', '~> 1.0'
+
+# Nested fields
 gem 'cocoon'
 # User authentication
 gem 'devise'
