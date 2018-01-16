@@ -12,7 +12,6 @@
   <% end %>
 
 <div class="row">
-  <div class="col-xs-8 col-md-4">
   <div class="form-group">
     <p>Workout Name:</p>
     <%= f.text_field :label, class: 'form-control' %>
@@ -27,22 +26,24 @@
       <% end %>
       <div class="links">
         <% Exercise.pluck(:muscle_group).uniq.each do |muscle_group| %>
-          <%= link_to_add_association "Add #{muscle_group} Exercise", 
-                                      f, :exercises_workouts, 
+          <%= link_to_add_association f, :exercises_workouts, 
                                       class: 'btn btn-default',
-                                      render_options: { locals: { muscle_group: muscle_group }} %>
+                                      render_options: { locals: { muscle_group: muscle_group }} do %>
+                                        <i class="fa fa-plus"></i> Add <%= muscle_group %> Exercise 
+                                        <% end %>
         <% end %>
       </div>
     </div>
   </div>
 
   <div class="actions">
-    <%= f.submit 'Submit', class: 'btn', id: 'btn-submit' %>
+    <%= f.button '<i class="fa fa-check" aria-hidden="true"></i> Submit'.html_safe, class: 'btn', id: 'btn-submit' %>
     <%if @workout.id %>
-      <%= link_to 'Back to Workout', @workout, class: 'btn', id: 'return-workout-link' %> 
+      <%= link_to @workout, class: 'btn', id: 'return-workout-link' do %> 
+      <i class="fa fa-chevron-left"></i> Back to Workout
+      <% end %>
     <% end %>
     <%= link_to 'All Workouts', workouts_path, class: 'btn', id: 'all-workouts-link' %>
   </div>
-</div>
 </div>
 <% end %>
