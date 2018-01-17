@@ -4,7 +4,10 @@
 
 <h1>Exercises</h1>
 
-<%= link_to 'New Exercise', new_exercise_path, remote: true %>
+<%= link_to new_exercise_path, remote: true, class: 'btn', id: 'btn-add-exercise' do %>
+  <i class="fa fa-plus" aria-hidden="true"></i> Add Exercise
+<% end %>
+
 <div id="exercise-form" style="display:none;"></div>
 
 <table class='table'>

@@ -155,10 +155,14 @@
 }
 #create-workout-link, 
 #edit-workout-link,
-#btn-submit {
+#btn-submit,
+#btn-add-exercise {
     background-color: #E73548;
     border-color: #E73548;
     color: #ECF0F1
+}
+#create-workout-link {
+    margin: 2% 0;
 }
 #delete-workout-link,
 #btn-delete {
@@ -174,6 +178,9 @@
 }
 #btn-submit {
     padding: 6px 12px;
+}
+.exercises {
+    background-color: #ECF0F1;
 }
 @media (min-width: 414px) {
     .dropdown-menu {
