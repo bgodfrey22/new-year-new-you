@@ -1,0 +1,9 @@
+<tr>
+    <td><%= exercise.name %></td>
+    <td><%= exercise.muscle_group %></td>
+    <td><%= link_to 'Show', exercise %></td>
+    <td><%= link_to 'Edit', edit_exercise_path(exercise), remote: true %></td>
+    <td><%= link_to 'Destroy', exercise, remote: true,
+                                         method: :delete, 
+                                         data: { confirm: 'Are you sure you want to delete this exercise?' } %></td>
+</tr>
