@@ -1,0 +1,13 @@
+<tr>
+    <td><%= exercise.name %></td>
+    <td><%= exercise.muscle_group %></td>
+    <td><%= link_to 'Show', exercise %></td>
+    <td><%= link_to edit_exercise_path(exercise), remote: true do %>
+                                                  <i class="fa fa-pencil" aria-hidden="true"></i> Edit
+                                                  <% end %></td>
+    <td><%= link_to exercise, remote: true,
+                              method: :delete, 
+                              data: { confirm: 'Are you sure you want to permanently delete this exercise?' } do%>
+                              <i class="fa fa-times" aria-hidden="true"></i> Delete
+                              <% end %></td>
+</tr>

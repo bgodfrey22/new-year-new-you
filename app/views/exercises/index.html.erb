@@ -1,4 +1,14 @@
+<div class="exercises">
+  <div class="container">
+<p id="notice"><%= notice %></p>
+
 <h1>Exercises</h1>
+
+<%= link_to new_exercise_path, remote: true, class: 'btn', id: 'btn-add-exercise' do %>
+  <i class="fa fa-plus" aria-hidden="true"></i> Add Exercise
+<% end %>
+
+<div id="exercise-form" style="display:none;"></div>
 
 <table class='table'>
   <thead>
@@ -9,19 +19,11 @@
     </tr>
   </thead>
 
-  <tbody>
-    <% @exercises.each do |exercise| %>
-      <tr>
-        <td><%= exercise.name %></td>
-        <td><%= exercise.muscle_group %></td>
-        <td><%= link_to 'Show', exercise %></td>
-        <td><%= link_to 'Edit', edit_exercise_path(exercise) %></td>
-        <td><%= link_to 'Destroy', exercise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+  <tbody id="exercises">
+    <%= render @exercises %>
   </tbody>
 </table>
 
-<br>
 
-<%= link_to 'New Exercise', new_exercise_path %>
+  </div>
+</div>
