@@ -1,5 +1,5 @@
 class ExercisesController < ApplicationController
-  before_action :all_exercises, only: [:index, :create, :update, :destroy]
+  before_action :all_exercises, only: [:index, :create, :update, :destroy, :hide_form]
   before_action :set_exercise, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:show]
   
