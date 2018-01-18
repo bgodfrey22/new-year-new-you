@@ -143,6 +143,7 @@
 }
 .workouts .panel img {
     max-height: 200px;
+    margin: auto;
 }
 .exercise-panel .panel-heading {
     background-color: #2BDAFF;
@@ -156,9 +157,9 @@
 #edit-workout-link,
 #btn-submit,
 #btn-add-exercise {
-    background-color: #E73548;
-    border-color: #E73548;
-    color: #ECF0F1
+    background-color: #ECF0F1;
+    border-color: #07161C;
+    color: #07161C;
 }
 #create-workout-link {
     margin: 2% 0;
@@ -170,20 +171,17 @@
     color: #ECF0F1;
 }
 #all-workouts-link{
-    background-color: #2BDAFF;
-    border-color: #07161C;
-    color: #07161C;
+    background-color: #E73548;
+    border-color: #E73548;
+    color: #ECF0F1
 }
 #view-workout-link {
-    background-color: #ECF0F1;
+    background-color: #2BDAFF;
     border-color: #07161C;
     color: #07161C;
 }
 #btn-submit {
     padding: 6px 12px;
-}
-.exercises {
-    background-color: #ECF0F1;
 }
 .user-info-sidebar {
     background-color: #07161C;
@@ -195,6 +193,20 @@
 }
 .user-info-sidebar img {
     display: none;
+}
+
+/***** EXERCISES PAGES ******/
+.exercises {
+    background-color: #ECF0F1;
+}
+.exercise-modal .modal-header {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.2em;
+}
+.exercise-modal ul li {
+    list-style: none;
+    color: #07161C;
 }
 @media (min-width: 414px) {
     .dropdown-menu {
