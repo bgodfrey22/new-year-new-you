@@ -3,7 +3,7 @@ class WorkoutsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @workouts = Workout.all 
+    @workouts = Workout.all
   end
 
   def show
@@ -15,9 +15,9 @@ class WorkoutsController < ApplicationController
   end
 
   def create
-    @workout = Workout.create(workout_params)
+    @workout = Workout.create(workout_params.merge({ user_id: current_user.id }))
     if @workout.save
-      redirect_to workouts_path(@workout)
+      redirect_to workout_path(@workout.id)
     else
       render :new
     end

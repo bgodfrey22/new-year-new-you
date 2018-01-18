@@ -1,5 +1,4 @@
 <div class="workouts container-fluid">
-<p id="notice"><%= notice %></p>
 
 <h1><%= @workout.label %> Exercises</h1>
 
@@ -18,7 +17,6 @@
         </div>
     <% end %>
 </div>
-
 
 <%= link_to edit_workout_path(@workout), class: 'btn', id: 'edit-workout-link' do %>
                                         <i class="fa fa-pencil" aria-hidden="true"></i> Edit
