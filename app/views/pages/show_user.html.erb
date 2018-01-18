@@ -3,7 +3,15 @@
 
     <h1><strong> <%= @user.username %> </strong></h1>
 
-    <%= @user.workouts.each do |workout| %>
+    <div class="row">
+    <% if current_user %>
+        <%= link_to new_workout_path, class: 'btn', id: 'create-workout-link' do %>
+        <i class="fa fa-plus" aria-hidden="true"></i> Create New Workout
+        <% end %>
+    <% end %>
+    </div>
+
+    <% @user.workouts.each do |workout| %>
         <%= render 'workouts/workout', workout: workout %>
     <% end %>
     </div>
