@@ -1,0 +1,7 @@
+<div class="nested-fields form-group">
+  <% f.select :exercise_id, Exercise.all.collect { |e| [e.name, e.id] }, :include_blank => true %>
+  <%= f.select :exercise_id, Exercise.where(equipment_type: equipment_type).collect { |e| [e.name, e.id] }, :include_blank => true %>
+  <%= link_to_remove_association f, class: 'btn', id: 'btn-delete' do %>
+  <i class="fa fa-times"></i> Delete
+  <% end %>
+</div>

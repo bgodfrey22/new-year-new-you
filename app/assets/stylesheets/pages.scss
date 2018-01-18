@@ -144,7 +144,10 @@
 .workouts .panel img {
     max-height: 200px;
 }
-#backto-workout-link {
+.exercise-panel .panel-heading {
+    background-color: #2BDAFF;
+}
+#backto-workout-link, #my-workouts-link {
     background-color: #ECF0F1;
     border: 2px solid #E73548;
     color: #E73548;
@@ -182,6 +185,17 @@
 .exercises {
     background-color: #ECF0F1;
 }
+.user-info-sidebar {
+    background-color: #07161C;
+    color: #ECF0F1;
+    padding: 1%;
+}
+.user-info-sidebar h1 {
+    color: #ECF0F1;
+}
+.user-info-sidebar img {
+    display: none;
+}
 @media (min-width: 414px) {
     .dropdown-menu {
         background-color: #07161C;
@@ -201,15 +215,9 @@
     .call-to-action img {
         width: 90px;
     }
-    .user-info-sidebar {
-        background-color: #07161C;
-        color: #ECF0F1;
-        padding: 1%;
-    }
-    .user-info-sidebar h1 {
-        color: #ECF0F1;
-    }
     .user-info-sidebar img {
+        display: flex;
+        margin: auto;
         border-radius: 5px;
     }
     .user-workouts a {

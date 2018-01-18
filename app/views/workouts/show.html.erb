@@ -1,9 +1,9 @@
 <div class="workouts">
     <div class="container-fluid">
 
-    <h1><%= @workout.label %></h1>
+    <h1> Exercises for: <%= @workout.label %></h1>
 
-    <div>
+    <div style="margin:1% 0;">
         <%= link_to edit_workout_path(@workout), class: 'btn', id: 'edit-workout-link' do %>
             <i class="fa fa-pencil" aria-hidden="true"></i> Edit
         <% end %>
@@ -11,13 +11,14 @@
             class: 'btn', id: 'delete-workout-link' do %>
             <i class="fa fa-times" aria-hidden="true"></i> Delete
         <% end %>
-        <%= link_to 'All Workouts', workouts_path, class: 'btn', id: 'all-workouts-link' %>
+        <%= link_to workouts_path, class: 'btn', id: 'all-workouts-link' do %>
+            <i class="fa fa-star" aria-hidden="true"></i> All Workouts
+        <% end %>
     </div>
 
-    <div class="row">
+    <div class="row container-fluid">
         <% @workout.exercises.each do |exercise| %>
-            <div class="col-sm-6">
-                <div class="panel">
+                <div class="panel exercise-panel">
                     <div class="panel-heading">
                         <%= exercise.name %>
                     </div>

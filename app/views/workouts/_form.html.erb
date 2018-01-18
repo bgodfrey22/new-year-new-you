@@ -14,23 +14,24 @@
   <%= f.hidden_field :user_id, value: current_user.id %>
 
   <div class="form-group">
-    <p>Workout Name:</p>
+    <h3>Workout Name:</h3>
     <%= f.text_field :label, class: 'form-control' %>
   </div>
 
   <div class="form-group">
-    <p>Choose Exercises:</p>
+    <h3>Choose Exercises</h3>
     <div id="exercises_workout">
     <%= f.fields_for :exercises_workouts do |exercise| %>
       <%= render 'exercises_workout_fields', f: exercise, muscle_group: exercise.object.exercise.muscle_group %>
       <% end %>
 
       <div class="links">
+        <h4>By Muscle Group:</h4>
         <% Exercise.pluck(:muscle_group).uniq.each do |muscle_group| %>
           <%= link_to_add_association f, :exercises_workouts, 
                                       class: 'btn btn-default',
                                       render_options: { locals: { muscle_group: muscle_group }} do %>
-                                        <i class="fa fa-plus"></i> Add <%= muscle_group %> Exercise 
+                                        <i class="fa fa-plus"></i> <%= muscle_group %>
                                         <% end %>
         <% end %>
       </div>
@@ -45,7 +46,9 @@
       <i class="fa fa-chevron-left"></i> Back to Workout
       <% end %>
     <% end %>
-    <%= link_to 'All Workouts', workouts_path, class: 'btn', id: 'all-workouts-link' %>
+    <%= link_to workouts_path, class: 'btn', id: 'all-workouts-link' do %>
+      <i class="fa fa-star" aria-hidden="true"></i> All Workouts
+    <% end %>
   </div>
 </div>
 <% end %>

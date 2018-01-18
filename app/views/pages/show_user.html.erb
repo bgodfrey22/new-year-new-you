@@ -15,6 +15,7 @@
                 <% end %>
                 <%= link_to 'All Workouts', workouts_path, class: 'btn', id: 'all-workouts-link' %>
 
+                <h4>Workouts</h4>
                 <% @user.workouts.each do |workout| %>
                 <%= render 'workouts/workout', workout: workout %>
             <% end %>
