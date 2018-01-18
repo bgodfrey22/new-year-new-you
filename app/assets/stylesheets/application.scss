@@ -68,4 +68,15 @@ footer {
 }
 .new-session {
     padding-bottom: 5%;  
-}   
+}
+.contact-modal {
+    text-align: center;
+}
+.contact-modal .modal-header {
+    background-color: #E73548;
+    color: #ECF0F1;
+}
+.contact-modal ul li {
+    list-style: none;
+    line-height: 50px;
+}  
