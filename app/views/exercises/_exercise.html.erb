@@ -3,7 +3,8 @@
     <td><%= exercise.muscle_group %></td>
     <td><%= exercise.equipment_type %></td>
     <td><a data-toggle="modal" data-target="#showExerciseModal">Show </a></td>
-    <td><%= link_to edit_exercise_path(exercise), remote: true do %>
+    <td><%= link_to edit_exercise_path(exercise), remote: true,
+                                                  action: :update do %>
                                                   <i class="fa fa-pencil" aria-hidden="true"></i> Edit
                                                   <% end %></td>
     <td><%= link_to exercise, remote: true,
@@ -21,9 +22,9 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <strong><%= exercise.name %></strong>
       </div>
-      <div class="modal-body connect-icons">
+      <div class="modal-body">
         <ul>
-          <li><%= image_tag exercise.image, class: "img-responsive" %></li>
+          <%= image_tag exercise.image, class: 'img-responsive' %>
           <li><strong>MUSCLE GROUP: </strong><%= exercise.muscle_group %></li>
           <li><strong>EQUIPMENT TYPE: </strong><%= exercise.equipment_type %></li>
           <li><strong>DESCRIPTION: </strong><%= exercise.description %></li>
