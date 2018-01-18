@@ -137,12 +137,17 @@
 .workouts .panel {
     border: 1px solid #040D17;
     text-align: center; 
+    color: #040D17;
 }
 .workouts .panel-heading {
     background-color: #E73548;
-    color: #040D17;
     text-transform: uppercase;
     font-size: 1.5em;
+}
+.workouts .panel ul li {
+    list-style: none;
+    color: #040D17;
+    line-height: 32px;
 }
 .workouts .panel img {
     max-height: 200px;

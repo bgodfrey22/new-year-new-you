@@ -1,7 +1,7 @@
 <div class="workouts">
     <div class="container-fluid">
 
-    <h1><%= @workout.label %> Exercises</h1>
+    <h1><%= @workout.label %></h1>
 
     <div class="row">
         <% @workout.exercises.each do |exercise| %>
@@ -11,10 +11,13 @@
                         <%= exercise.name %>
                     </div>
                     <div class="panel-body">
-                        <%= image_tag exercise.image, class: "img-responsive" %>
-                        <%= exercise.muscle_group %>
-                        <%= exercise.equipment_type %>
-                        <%= exercise.description %>
+                        <ul>
+                            <li><%= image_tag exercise.image, class: "img-responsive" %></li>
+                            <li><strong>MUSCLE GROUP:</strong> <%= exercise.muscle_group %> </li>
+                            <li><strong>TYPE: </strong> <%= exercise.equipment_type %></li>
+                            <li><strong>DESCRIPTION: </strong><br/>
+                                <%= exercise.description %></li>
+                        </ul>
                     </div>
                 </div>
             </div>
