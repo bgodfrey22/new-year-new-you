@@ -68,7 +68,7 @@
 .about-meet {
     background-color: #ECF0F1;
     padding: 2% 0;  
-    color: #040D17;
+    color: #07161C;
     text-align: center;
 }
 .about-main h3 {
@@ -97,13 +97,13 @@
 .about-meet .panel {
     background-color: transparent;
     margin: 2%;
-    border: 1px #040D17 solid;
+    border: 1px #07161C solid;
     line-height: 1.8em;
-    color: #040D17;
+    color: #07161C;
 }
 .about-meet .panel h3,
 .about-meet .panel h4 {
-    color: #040D17;
+    color: #07161C;
 }
 
 /***** WORKOUTS PAGES ******/
@@ -114,15 +114,15 @@
     background-position: center;
 }
 .workouts h1 {
-    color: #040D17;
+    color: #07161C;
     text-align: center;
     font-size: 2.2em;
     margin: 5%;
 }
 .workouts .panel {
-    border: 1px solid #040D17;
+    border: 1px solid #07161C;
     text-align: center; 
-    color: #040D17;
+    color: #07161C;
 }
 .workouts .panel-heading {
     background-color: #E73548;
@@ -138,7 +138,7 @@
 }
 .workouts .panel ul li {
     list-style: none;
-    color: #040D17;
+    color: #07161C;
     line-height: 32px;
 }
 .workouts .panel img {
@@ -162,15 +162,19 @@
 }
 #delete-workout-link,
 #btn-delete {
-    background-color: #040D17;
-    border-color: #040D17;
+    background-color: #07161C;
+    border-color: #07161C;
     color: #ECF0F1;
 }
-#all-workouts-link,
-#view-workout-link {
+#all-workouts-link{
     background-color: #2BDAFF;
-    border-color: #040D17;
-    color: #040D17;
+    border-color: #07161C;
+    color: #07161C;
+}
+#view-workout-link {
+    background-color: #ECF0F1;
+    border-color: #07161C;
+    color: #07161C;
 }
 #btn-submit {
     padding: 6px 12px;
@@ -180,7 +184,7 @@
 }
 @media (min-width: 414px) {
     .dropdown-menu {
-        background-color: #040D17;
+        background-color: #07161C;
     }
     .carousel-style .carousel-inner .item {
         max-height: 325px; 
@@ -196,6 +200,20 @@
     }
     .call-to-action img {
         width: 90px;
+    }
+    .user-info-sidebar {
+        background-color: #07161C;
+        color: #ECF0F1;
+        padding: 1%;
+    }
+    .user-info-sidebar h1 {
+        color: #ECF0F1;
+    }
+    .user-info-sidebar img {
+        border-radius: 5px;
+    }
+    .user-workouts a {
+        margin: 2% 0;
     }
 }
 @media (min-width: 768px) {

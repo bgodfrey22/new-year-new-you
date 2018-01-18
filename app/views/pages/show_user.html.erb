@@ -2,12 +2,12 @@
     <div class="container-fluid">
 
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-4 user-info-sidebar">
                 <h1><strong><%= @user.username %></strong></h1>
                 <%= image_tag @user.avatar, class: "img-responsive" %>
             </div>
 
-            <div class="col-sm-8">
+            <div class="col-sm-8 user-workouts">
                 <% if @user.id == current_user.id %>
                     <%= link_to new_workout_path, class: 'btn', id: 'create-workout-link' do %>
                     <i class="fa fa-plus" aria-hidden="true"></i> Create New Workout
