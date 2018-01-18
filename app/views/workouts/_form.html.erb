@@ -41,7 +41,7 @@
   <div class="actions">
     <%= f.button '<i class="fa fa-check" aria-hidden="true"></i> Submit'.html_safe, class: 'btn', id: 'btn-submit' %>
     <%if @workout.id %>
-      <%= link_to @workout, class: 'btn', id: 'return-workout-link' do %> 
+      <%= link_to @workout, class: 'btn', id: 'backto-workout-link' do %> 
       <i class="fa fa-chevron-left"></i> Back to Workout
       <% end %>
     <% end %>

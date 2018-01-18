@@ -46,21 +46,6 @@
 .about-meet h3 {
     font-weight: 900;
 }
-.contact {
-    color: #ECF0F1;
-    width: 100%;
-    padding: 2% 0;
-    text-align: center;
-}
-.contact h1, 
-.contact img {
-    margin-bottom: 2%;
-}
-.contact h1 span {
-    font-family: 'Monoton', sans-serif;
-    color: #E73548;
-    text-transform: uppercase;
-}
 
 /***** ABOUT PAGE ******/
 .about-header {
@@ -143,6 +128,13 @@
     background-color: #E73548;
     text-transform: uppercase;
     font-size: 1.5em;
+    padding: 1% 0 0 0;
+}
+.workouts .panel-heading p,
+.workouts .panel-heading p a {
+    color: #2BDAFF;
+    text-transform: none;
+    font-size: 16px;
 }
 .workouts .panel ul li {
     list-style: none;
@@ -152,7 +144,7 @@
 .workouts .panel img {
     max-height: 200px;
 }
-#return-workout-link {
+#backto-workout-link {
     background-color: #ECF0F1;
     border: 2px solid #E73548;
     color: #E73548;
@@ -171,7 +163,7 @@
 #delete-workout-link,
 #btn-delete {
     background-color: #040D17;
-    border-color: #ECF0F1;
+    border-color: #040D17;
     color: #ECF0F1;
 }
 #all-workouts-link,

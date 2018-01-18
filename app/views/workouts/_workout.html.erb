@@ -1,13 +1,14 @@
-<div class="col-sm-6">
-    <div class="panel ">
-        <div class="panel-heading"><%= workout.label %></div>
-        <div class="panel-body">
-            <% workout.exercises.each do |exercise| %>
-                <p><%= exercise.name %></p>
-            <% end %>
-            <%= link_to workout.user.username, show_user_path(id: workout.user_id) %>
-            <%= link_to 'View Workout', workout, class: 'btn', id: 'view-workout-link' %>
-        </div>
-    </div> <!-- Panel class -->
-</div> <!-- Col-sm-4 -->
+<div class="panel ">
+    <div class="panel-heading"><%= workout.label %>
+        <p><%= link_to workout.user.username, show_user_path(id: workout.user_id) %> </p>
+    </div>
+    <div class="panel-body">
+        <% workout.exercises.each do |exercise| %>
+            <p><%= exercise.name %></p>
+        <% end %>
+        <br/>
+        <%= link_to 'View Workout', workout, class: 'btn', id: 'view-workout-link' %>
+    </div>
+</div> <!-- Panel class -->
+
 
