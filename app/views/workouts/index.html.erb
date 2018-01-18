@@ -2,10 +2,6 @@
     <div class="container-fluid">
 
         <h1>All Workouts</h1>
-
-        <%= link_to new_workout_path, class: 'btn', id: 'create-workout-link' do %>
-        <i class="fa fa-plus" aria-hidden="true"></i> Create New Workout
-        <% end %>
         
         <div class="row">
             <%= render @workouts %>

@@ -3,7 +3,7 @@ class WorkoutsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @workouts = Workout.all 
+    @workouts = Workout.all
   end
 
   def show
@@ -15,9 +15,9 @@ class WorkoutsController < ApplicationController
   end
 
   def create
-    @workout = Workout.create(workout_params)
+    @workout = Workout.create(workout_params.merge({ user_id: current_user.id }))
     if @workout.save
-      redirect_to workouts_path(@workout)
+      redirect_to workout_path(@workout.id)
     else
       render :new
     end
@@ -54,6 +54,6 @@ class WorkoutsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def workout_params
-    params.require(:workout).permit(:label, exercises_workouts_attributes: [:id, :exercise_id, :_destroy])
+    params.require(:workout).permit(:label, :user_id, exercises_workouts_attributes: [:id, :exercise_id, :_destroy])
   end
 end

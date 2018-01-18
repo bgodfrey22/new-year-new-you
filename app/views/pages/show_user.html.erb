@@ -1,6 +1,18 @@
-<h1> <%= @user.username %> </h1>
+<div class="workouts">
+    <div class="container">
 
-<p>This page displayers all of the workouts for a user.</p>
-<p>The purpose of this page is to allow others to see what workouts a user is doing 
-    and allows them to view workouts and copy them to their own collection of workouts.  
-</p>
+    <h1><strong> <%= @user.username %> </strong></h1>
+
+    <div class="row">
+    <% if current_user %>
+        <%= link_to new_workout_path, class: 'btn', id: 'create-workout-link' do %>
+        <i class="fa fa-plus" aria-hidden="true"></i> Create New Workout
+        <% end %>
+    <% end %>
+    </div>
+
+    <% @user.workouts.each do |workout| %>
+        <%= render 'workouts/workout', workout: workout %>
+    <% end %>
+    </div>
+</div>

@@ -5,9 +5,9 @@
             <% workout.exercises.each do |exercise| %>
                 <p><%= exercise.name %></p>
             <% end %>
+            <%= link_to workout.user.username, show_user_path(id: workout.user_id) %>
             <%= link_to 'View Workout', workout, class: 'btn', id: 'view-workout-link' %>
         </div>
     </div> <!-- Panel class -->
 </div> <!-- Col-sm-4 -->
-
 
