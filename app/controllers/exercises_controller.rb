@@ -12,6 +12,9 @@ class ExercisesController < ApplicationController
   def edit
   end
 
+  def show
+  end
+
   # POST /exercises
   def create
     @exercise = Exercise.create(exercise_params)

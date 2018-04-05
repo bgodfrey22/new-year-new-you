@@ -2,6 +2,7 @@
     <td><%= exercise.name %></td>
     <td><%= exercise.muscle_group %></td>
     <td><%= exercise.equipment_type %></td>
+    <!-- <td><%= link_to 'Show', exercise_path(id: exercise.id) %></td> -->
     <td><a data-toggle="modal" data-target="#showExerciseModal">Show </a></td>
     <td><%= link_to edit_exercise_path(exercise), remote: true,
                                                   action: :update do %>
@@ -24,7 +25,7 @@
       </div>
       <div class="modal-body">
         <ul>
-          <%= image_tag exercise.image, class: 'img-responsive' %>
+          <li><%= image_tag exercise.image, class: 'img-responsive' %></li>
           <li><strong>MUSCLE GROUP: </strong><%= exercise.muscle_group %></li>
           <li><strong>EQUIPMENT TYPE: </strong><%= exercise.equipment_type %></li>
           <li><strong>DESCRIPTION: </strong><%= exercise.description %></li>
